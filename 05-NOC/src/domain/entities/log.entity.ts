@@ -13,14 +13,14 @@ export interface LogEntityOptions {
 export class LogEntity {
   public level: LogSeverityLevel; //Enum
   public message: string;
-  public createAt: Date;
+  public createdAt: Date;
   public origin: string;
 
   constructor(options: LogEntityOptions) {
     const { level, message, origin, createAt = new Date() } = options;
     this.message = message;
     this.level = level;
-    this.createAt = createAt;
+    this.createdAt = createAt;
     this.origin = origin;
   }
 
@@ -31,6 +31,17 @@ export class LogEntity {
       level,
       createAt,
       origin: "log.entity.ts",
+    });
+    return log;
+  };
+
+  static fromObject = (object: { [key: string]: any }): LogEntity => {
+    const { message, level, createAt, origin } = object;
+    const log = new LogEntity({
+      message,
+      level,
+      createAt,
+      origin,
     });
     return log;
   };

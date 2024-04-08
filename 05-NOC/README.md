@@ -22,7 +22,13 @@ PROD=false
 npm install
 ```
 
-4. Ejecutar
+4. Levantar las bases de datos con el comando
+
+```
+docker compose up -d
+```
+
+5. Ejecutar
 
 ```
 npm run dev
