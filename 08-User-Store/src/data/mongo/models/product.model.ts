@@ -26,8 +26,16 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     type: Schema.Types.ObjectId,
-    rerf: "Category",
+    ref: "Category",
     required: true,
+  },
+});
+
+productSchema.set("toJSON", {
+  virtuals: true,
+  versionKey: false,
+  transform: function (doc, ret, options) {
+    delete ret._id;
   },
 });
 
