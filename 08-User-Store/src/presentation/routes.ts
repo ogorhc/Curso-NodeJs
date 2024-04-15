@@ -9,7 +9,7 @@ export class AppRoutes {
 
     router.use("/api/auth", AuthRoutes.routes);
     router.use("/api/categories", CategoriesRoutes.routes);
-    // router.use("/api/products", ProductsRoutes.routes);
+    router.use("/api/products", ProductsRoutes.routes);
 
     return router;
   }
