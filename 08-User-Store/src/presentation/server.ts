@@ -1,7 +1,7 @@
 import express, { Router } from "express";
 import fileUpload from "express-fileupload";
 import path from "path";
-
+import cors from "cors";
 interface Options {
   port: number;
   routes: Router;
@@ -24,6 +24,13 @@ export class Server {
 
   async start() {
     //* Middlewares
+    this.app.use(
+      cors({
+        origin: "*", // Permitir solicitudes desde cualquier origen
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Permitir los métodos utilizados en tu API
+        allowedHeaders: ["Content-Type", "Authorization"], // Permitir los encabezados utilizados en tu solicitud
+      })
+    );
     this.app.use(express.json()); // raw
     this.app.use(express.urlencoded({ extended: true })); // x-www-form-urlencoded
     this.app.use(
