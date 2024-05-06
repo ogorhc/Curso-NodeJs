@@ -4,8 +4,8 @@ import { DiscordService } from "../services/discord.service";
 
 export class GithubController {
   constructor(
-    private readonly githubService = new GithubService(),
-    private readonly discordService = new DiscordService()
+    private readonly githubService: GithubService,
+    private readonly discordService: DiscordService
   ) {}
 
   webhookHandler = (req: Request, res: Response) => {

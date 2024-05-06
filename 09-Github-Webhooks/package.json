@@ -19,6 +19,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "awilix": "^10.0.2",
     "dotenv": "^16.4.5",
     "env-var": "^7.4.1",
     "express": "^4.19.2"
