@@ -28,7 +28,13 @@ npm install
 docker compose up -d
 ```
 
-5. Ejecutar
+5. Ejecutar el comando de prisma
+
+```
+npx prisma migrate dev
+```
+
+6. Ejecutar
 
 ```
 npm run dev

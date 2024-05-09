@@ -54,13 +54,13 @@ export class Server {
     //     (error) => console.log(error)
     //   ).execute(url);
     // });
-    const job = CronService.createJob("*/5 * * * * * ", () => {
-      const url = "http://localhost:3000";
-      new CheckServiceMultiple(
-        [fsLogRepository, postgresLogRepository, mongoLogRepository],
-        () => console.log(`Success: ${url}`),
-        (error) => console.log(error)
-      ).execute(url);
-    });
+    // const job = CronService.createJob("*/5 * * * * * ", () => {
+    //   const url = "https://google.com";
+    //   new CheckServiceMultiple(
+    //     [fsLogRepository, postgresLogRepository, mongoLogRepository],
+    //     () => console.log(`Success: ${url}`),
+    //     (error) => console.log(error)
+    //   ).execute(url);
+    // });
   }
 }
